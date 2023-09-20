@@ -1,0 +1,40 @@
+.principal {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    flex-grow: 1;
+    background-color: aliceblue;
+    border-radius: .1rem;
+    overflow: hidden;
+
+}
+
+.containerTitle {
+    margin: 4px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(187, 155, 155, 0.5);
+}
+
+// .title {
+//     font-weight: 400;
+//     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+//     transform: skewX(-12deg);
+//     transform: skewY(1deg);
+//     letter-spacing: 0.1rem;
+
+// }
+
+
+
+.noElement {
+    margin: 4px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(160, 160, 160, 0.8)
+}

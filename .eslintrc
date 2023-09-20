@@ -9,7 +9,6 @@
     "plugin:prettier/recommended",
     "plugin:react-hooks/recommended"
   ],
-  "plugins": ["react", "prettier", "import", "@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -18,59 +17,103 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
+  "plugins": [
+    "react",
+    "prettier",
+    "import",
+    "@typescript-eslint"
+  ],
   "rules": {
-    "no-console": "warn",
-    "react/prop-types": "off",
-    "prettier/prettier": [
-      "error",
-      {
-        "printWidth": 100,
-        "trailingComma": "all",
-        "tabWidth": 2,
-        "semi": true,
-        "singleQuote": false,
-        "bracketSpacing": false,
-        "arrowParens": "always",
-        "endOfLine":"auto"
-      }
-    ],
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {
         "args": "after-used",
-        "ignoreRestSiblings": false,
-        "argsIgnorePattern": "^_.*?$"
+        "argsIgnorePattern": "^_.*?$",
+        "ignoreRestSiblings": false
       }
     ],
-    "import/order": ["warn", {
-      "groups": ["type", "builtin", "object", "external", "internal", "parent", "sibling", "index"],
-      "pathGroups": [{
-        "pattern": "~/**",
-        "group": "external",
-        "position": "after"
-      }],
-      "newlines-between": "always"
-    }],
-    "react/self-closing-comp": "warn",
+    "import/order": [
+      "warn",
+      {
+        "groups": [
+          "type",
+          "builtin",
+          "object",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "group": "external",
+            "pattern": "~/**",
+            "position": "after"
+          }
+        ]
+      }
+    ],
+    "no-console": "warn",
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "next": "return",
+        "prev": "*"
+      },
+      {
+        "blankLine": "always",
+        "next": "*",
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ]
+      },
+      {
+        "blankLine": "any",
+        "next": [
+          "const",
+          "let",
+          "var"
+        ],
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "arrowParens": "always",
+        "bracketSpacing": false,
+        "endOfLine": "auto",
+        "printWidth": 100,
+        "semi": true,
+        "singleQuote": false,
+        "tabWidth": 2,
+        "trailingComma": "all"
+      }
+    ],
     "react/jsx-sort-props": [
       "warn",
       {
         "callbacksLast": true,
-        "shorthandFirst": true,
         "noSortAlphabetically": false,
-        "reservedFirst": true
+        "reservedFirst": true,
+        "shorthandFirst": true
       }
     ],
-    "padding-line-between-statements": [
-      "error",
-      {"blankLine": "always", "prev": "*", "next": "return"},
-      {"blankLine": "always", "prev": ["const", "let", "var"], "next": "*"},
-      {"blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"]}
-    ]
+    "react/prop-types": "off",
+    "react/self-closing-comp": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
